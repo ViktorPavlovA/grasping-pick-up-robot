@@ -35,33 +35,22 @@
 
 2. В папке установим среду
 
-`conda create -n grasp_env python=3.6`
+`conda create -n любое_имя python=3.6`
 
 **Эту команду нужно вбивать при запуске командной строки**
 
-`conda activate grasp_env`
+`conda activate любое_имя `
 
-3. Перед установкой следующего пакета необходимо перейти в папку где у вас храниться anaconda 
-
-`anaconda anaconda3>Library>bin`
-
-**Найдите эти два файла:**
-
-`libcrypto-1_1-x64.dll`
-
-`libssl-1_1-x64.dll`
-
-**и скопируйте в anaconda3>DLLs**
 
 4. Установим дополнительные пакеты
 
 `conda install git`
 
-`git clone https://github.com/BarisYazici/deep-rl-grasping.git`
+`git clone https://github.com/ViktorPavlovA/grasping-pick-up-robot.git`
 
 `conda install -c conda-forge cudatoolkit=10.0 cudnn=7.6.5`
 
-`SET LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/`
+`export  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/`
 
 5. Изменим setup.py
 
@@ -75,59 +64,10 @@
 
 `'tensorflow==1.14.0'`
 
-На
+На у нас с ребятами gpu, поэтому мы выбрали 2 вариант
 
 `'tensorflow_gpu==1.14.0'`
 
 ## Финальная установка
 
 `pip install -e .`
-
-## Возможные проблемы с пакетом ##
-
-In this package trouble 'pybullet==3.2.5'
-
-error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": 
-
-**Установить и докачать пакеты**
-
-https://visualstudio.microsoft.com/visual-cpp-build-tools/
-
-**Возможно, придется в ручную прописывать все пакеты из setup.py**
-        'stable-baselines==2.10.1',
-        
-        **Если вы тренируете на процессоре**
-        
-        'tensorflow==1.14.0',
-        
-        **Если вы тренируете на видеокарте**
-        
-        'tensorflow_gpu==1.14.0',
-       
-        'gym==0.19.0',
-        
-        'keras==2.2.4',
-        
-        'matplotlib==3.3.4',
-        
-        'numpy==1.18',
-        
-        'opencv-contrib-python==4.5.5.64',
-        
-        'pandas==1.1.5',
-        
-        'pybullet==3.2.5',
-        
-        'pytest==7.0.1',
-        
-        'pydot==1.4.2',
-        
-        'PyYAML==5.4.1',
-        
-        'seaborn==0.11.2',
-        
-        'scikit-learn==0.24.2',
-        
-        'tqdm==4.64.0',
-        
-        'paramiko==2.10.3',
