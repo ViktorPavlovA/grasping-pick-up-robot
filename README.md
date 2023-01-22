@@ -88,4 +88,7 @@
 
 ## Обработка результатов эксперемента
 
+**запуск из корня проекта**
+
+`python scripts/plot.py --log-dirs trained_models/DQN_best_shot/`
 
