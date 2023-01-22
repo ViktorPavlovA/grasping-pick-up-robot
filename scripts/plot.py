@@ -52,7 +52,7 @@ seaborn.set()
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--log-dirs', help='Log folder(s)', nargs='+', required=True, type=str)
-parser.add_argument('--title', help='Plot title', default='Learning Curve', type=str)
+parser.add_argument('--title', help='Plot title', default='График обучения', type=str)
 parser.add_argument('--smooth', action='store_true', default=False,
                     help='Smooth Learning Curve')
 args = parser.parse_args()
@@ -86,11 +86,11 @@ for plot_type in ['timesteps']:
         plt.plot(x[:min_timesteps], y[:min_timesteps], label=algos[i], linewidth=2)
     plt.title(args.title)
     plt.legend()
-    plt.ylabel("Success Rate")
+    plt.ylabel("Награда")
     if plot_type == 'timesteps':
         if min_timesteps > 1e6:
             formatter = FuncFormatter(millions)
-            plt.xlabel('Number of Timesteps')
+            plt.xlabel('Количество Эпизодов')
             fig.axes[0].xaxis.set_major_formatter(formatter)
 
 plt.show()
