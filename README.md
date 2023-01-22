@@ -64,10 +64,28 @@
 
 `'tensorflow==1.14.0'`
 
-На у нас с ребятами gpu, поэтому мы выбрали 2 вариант
+у нас с ребятами gpu, поэтому мы выбрали 2 вариант
 
 `'tensorflow_gpu==1.14.0'`
 
 ## Финальная установка
 
 `pip install -e .`
+
+## Как обучать ?
+
+**Выбор алгоритма**
+
+`--algo SAC or DQN`   
+
+**Куда сохранется**
+
+`--model_dir trained_models/SAC_best_shot` 
+
+**Запуск**
+
+`python manipulation_main/training/train_stable_baselines.py train --config config/gripper_grasp.yaml --algo SAC --model_dir trained_models/SAC_best_shot --timestep 100000 -v `  
+
+## Обработка результатов эксперемента
+
+
